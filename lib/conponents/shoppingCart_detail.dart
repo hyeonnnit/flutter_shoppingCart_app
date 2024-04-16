@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingCartDetail extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +25,8 @@ class ShoppingCartDetail extends StatelessWidget {
       ),
     );
   }
-  Widget _buildDetailNameAndPrice(){
+
+  Widget _buildDetailNameAndPrice() {
     return Padding(
       padding: EdgeInsets.only(bottom: 10),
       child: Row(
@@ -50,7 +50,8 @@ class ShoppingCartDetail extends StatelessWidget {
       ),
     );
   }
-  Widget _buildDetailRatingAndReviewCount(){
+
+  Widget _buildDetailRatingAndReviewCount() {
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Row(
@@ -67,7 +68,8 @@ class ShoppingCartDetail extends StatelessWidget {
       ),
     );
   }
-  Widget _buildDetailColorOptions(){
+
+  Widget _buildDetailColorOptions() {
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Column(
@@ -89,11 +91,37 @@ class ShoppingCartDetail extends StatelessWidget {
     );
   }
 
-  Widget _buildDetailIcon(IconData mIcon){
-    return SizedBox();
+  Widget _buildDetailIcon(Color mColor) {
+    return Padding(
+      padding: EdgeInsets.only(right: 10),
+      child: Stack(
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(),
+              shape: BoxShape.circle,
+            ),
+          ),
+          Positioned(
+            left: 5,
+            top: 5,
+            child: ClipOval(
+              child: Container(
+                color: mColor,
+                width: 40,
+                height: 40,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
-  Widget _buildDetailButton(){
+  Widget _buildDetailButton() {
     return SizedBox();
   }
 }
