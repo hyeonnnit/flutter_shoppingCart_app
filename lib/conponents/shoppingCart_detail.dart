@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_cart_app/constants.dart';
 
 class ShoppingCartDetail extends StatelessWidget {
   @override
@@ -121,7 +122,22 @@ class ShoppingCartDetail extends StatelessWidget {
     );
   }
 
-  Widget _buildDetailButton() {
-    return SizedBox();
+  Widget _buildDetailButton(BuildContext context) {
+    return Align(
+      child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          backgroundColor: kAccentColor,
+          minimumSize: Size(300, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        child: Text(
+          "Add to Cart",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 }
