@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +20,35 @@ class ShoppingCartDetail extends StatelessWidget {
             _buildDetailNameAndPrice(),
             _buildDetailRatingAndReviewCount(),
             _buildDetailColorOptions(),
-            _buildDetailButton(),
+            _buildDetailButton(context),
           ],
         ),
       ),
     );
   }
   Widget _buildDetailNameAndPrice(){
-    return SizedBox();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Urban Soft AL 10.0",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            "\$699",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
   }
   Widget _buildDetailRatingAndReviewCount(){
     return SizedBox();
