@@ -28,7 +28,7 @@ class ShoppingCartDetail extends StatelessWidget {
   }
   Widget _buildDetailNameAndPrice(){
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -52,7 +52,7 @@ class ShoppingCartDetail extends StatelessWidget {
   }
   Widget _buildDetailRatingAndReviewCount(){
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: EdgeInsets.only(bottom: 20),
       child: Row(
         children: [
           Icon(Icons.star, color: Colors.yellow),
@@ -68,7 +68,25 @@ class ShoppingCartDetail extends StatelessWidget {
     );
   }
   Widget _buildDetailColorOptions(){
-    return SizedBox();
+    return Padding(
+      padding: EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Color Options"),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              _buildDetailIcon(Colors.black),
+              _buildDetailIcon(Colors.green),
+              _buildDetailIcon(Colors.orange),
+              _buildDetailIcon(Colors.grey),
+              _buildDetailIcon(Colors.white),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _buildDetailIcon(IconData mIcon){
