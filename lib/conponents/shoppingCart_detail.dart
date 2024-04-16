@@ -51,7 +51,21 @@ class ShoppingCartDetail extends StatelessWidget {
     );
   }
   Widget _buildDetailRatingAndReviewCount(){
-    return SizedBox();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        children: [
+          Icon(Icons.star, color: Colors.yellow),
+          Icon(Icons.star, color: Colors.yellow),
+          Icon(Icons.star, color: Colors.yellow),
+          Icon(Icons.star, color: Colors.yellow),
+          Icon(Icons.star, color: Colors.yellow),
+          Spacer(),
+          Text("review "),
+          Text("(26)", style: TextStyle(color: Colors.blue)),
+        ],
+      ),
+    );
   }
   Widget _buildDetailColorOptions(){
     return SizedBox();
