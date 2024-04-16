@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_cart_app/constants.dart';
@@ -125,7 +123,22 @@ class ShoppingCartDetail extends StatelessWidget {
   Widget _buildDetailButton(BuildContext context) {
     return Align(
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          showCupertinoDialog(
+            context: context,
+            builder: (context) => CupertinoAlertDialog(
+              title: Text("장바구니에 담으시겠습니까?"),
+              actions: [
+                CupertinoDialogAction(
+                  child: Text("확인"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+          );
+        },
         style: TextButton.styleFrom(
           backgroundColor: kAccentColor,
           minimumSize: Size(300, 50),
